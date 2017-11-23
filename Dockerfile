@@ -1,8 +1,7 @@
 FROM nginx:alpine
 
 RUN mkdir -p /home/LogFiles \
- && mkdir -p /home/site/wwwroot \
- && mkdir -p /home/foo
+ && mkdir -p /home/site/wwwroot
 
 RUN rm -rf /usr/share/nginx/html \
  && rm -rf /var/log/nginx \
