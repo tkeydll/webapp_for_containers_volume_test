@@ -1,5 +1,8 @@
 FROM nginx:alpine
 
+RUN apk --update add pcre-dev openssl-dev \
+  && apk add --virtual build-dependencies build-base curl
+
 RUN mkdir -p /home/LogFiles \
  && mkdir -p /home/site/wwwroot
 
@@ -8,10 +11,14 @@ RUN rm -rf /usr/share/nginx/html \
  && ln -s /home/site/wwwroot /usr/share/nginx/html \
  && ln -s /home/LogFiles /var/log/nginx
 
-COPY site /usr/share/nginx/html
-COPY site /home/foo
-#COPY site/index.html /usr/share/nginx/html
-#COPY site/index.html /home/foo
+WORKDIR /home/site/wwwroot
 
-RUN chown -R nobody:nogroup /home \
- && chown -R nobody:nogroup /usr/share/nginx/html
+RUN curl -SLO https://raw.githubusercontent.com/tkeydll/webapp_for_containers_volume_test/master/site.tar.gz
+RUN tar zxvf site.tar.gz
+
+#COPY site /usr/share/nginx/html
+#COPY site /home/foo
+
+# DON'T WORK
+#COPY site/index.html /usr/share/nginx/html
+#RUN chown nobody:nogroup /home/site/wwwroot/index.html
