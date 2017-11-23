@@ -1,7 +1,7 @@
 FROM nginx:alpine
 
-RUN mkdir -p /home/LogFiles \
- && mkdir -p /home/site/wwwroot
+#RUN mkdir -p /home/LogFiles \
+# && mkdir -p /home/site/wwwroot
 
 RUN rm -rf /usr/share/nginx/html \
  && rm -rf /var/log/nginx \
@@ -12,5 +12,3 @@ RUN rm -rf /usr/share/nginx/html \
 #COPY site /home/foo
 COPY site/index.html /usr/share/nginx/html
 #COPY site/index.html /home/foo
-
-VOLUME ["/home/site/wwwroot"]
