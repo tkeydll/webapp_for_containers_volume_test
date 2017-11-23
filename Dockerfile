@@ -8,10 +8,10 @@ RUN rm -rf /usr/share/nginx/html \
  && ln -s /home/site/wwwroot /usr/share/nginx/html \
  && ln -s /home/LogFiles /var/log/nginx
 
-#COPY site /usr/share/nginx/html
-#COPY site /home/foo
-COPY site/index.html /usr/share/nginx/html
+COPY site /usr/share/nginx/html
+COPY site /home/foo
+#COPY site/index.html /usr/share/nginx/html
 #COPY site/index.html /home/foo
 
-RUN chown -R nobody:nogroup /home
-
+RUN chown -R nobody:nogroup /home \
+ && chown -R nobody:nogroup /usr/share/nginx/html
