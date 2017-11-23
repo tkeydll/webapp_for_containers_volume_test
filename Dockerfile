@@ -10,5 +10,5 @@ RUN rm -rf /usr/share/nginx/html \
 
 #COPY site /usr/share/nginx/html
 #COPY site /home/foo
-ADD site/index.html /usr/share/nginx/html
+COPY --chown=nobody:nogroup site/index.html /usr/share/nginx/html
 #COPY site/index.html /home/foo
