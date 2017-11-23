@@ -13,4 +13,5 @@ RUN rm -rf /usr/share/nginx/html \
 COPY site/index.html /usr/share/nginx/html
 #COPY site/index.html /home/foo
 
-RUN chown -R nobody:nogroup /usr/share/nginx/html
+RUN chown -R nobody:nogroup /home
+
