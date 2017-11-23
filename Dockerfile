@@ -10,5 +10,5 @@ RUN rm -rf /usr/share/nginx/html \
 
 #COPY site /usr/share/nginx/html
 #COPY site /home/foo
-COPY site/index.html /usr/share/nginx/html
+ADD site/index.html /usr/share/nginx/html
 #COPY site/index.html /home/foo
