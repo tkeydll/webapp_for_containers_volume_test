@@ -1,7 +1,7 @@
 FROM nginx:alpine
 
-RUN apk --update add pcre-dev openssl-dev \
-  && apk add --virtual build-dependencies build-base curl
+RUN apk --update add \
+  && apk add --virtual curl
 
 RUN mkdir -p /home/LogFiles \
  && mkdir -p /home/site/wwwroot
