@@ -12,3 +12,5 @@ RUN rm -rf /usr/share/nginx/html \
 #COPY site /home/foo
 COPY site/index.html /usr/share/nginx/html
 #COPY site/index.html /home/foo
+
+VOLUME ["/home/site/wwwroot"]
