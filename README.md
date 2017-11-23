@@ -1,0 +1,1 @@
+Web App for Containers のボリュームマッピングを検証するためのDockerイメージ。
