@@ -1,4 +1,4 @@
-# 4の構成で VOLLUME 指定するとどうなるか
+# 4の構成で VOLLUME 指定するとどうなるか（パスを変更）
 
 FROM nginx:alpine
 
@@ -11,4 +11,4 @@ RUN rm -rf /usr/share/nginx/html \
 COPY ./site/index.html /home/site/wwwroot/index.html
 COPY ./site /home/hoge
 
-VOLUME ["/home/hoge"]
+VOLUME ["/home/hoge/subdir"]
